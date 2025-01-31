@@ -1,0 +1,39 @@
+# Node modules
+/node_modules/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Directory for dependency caching
+/.pnp/
+.pnp.js
+
+# Build directories
+/dist
+/build
+
+# Logs
+/logs
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE or editor specific files
+.idea/      # WebStorm and JetBrains IDEs
+
+# Temporary files
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# Any other config file that contains sensitive information
+*.pem
+*.key
