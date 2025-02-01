@@ -15,15 +15,6 @@ export class AuthController {
     const { email, password, username, bio, role } = req.body
     const profileImageUrl = req.file ? req.file.path : undefined
 
-    console.log(req.file);
-
-    if (req.file) {
-      console.log('File path:', req.file.path);  // Directly log req.file.path
-      const profileImageUrl = req.file.path;
-      console.log('Profile Image URL:', profileImageUrl);
-    }
-
-
     try {
       const { user, token } = await AuthService.createUser({
         email,
