@@ -1,6 +1,6 @@
-import { configDotenv } from 'dotenv';
-configDotenv();
+import { configDotenv } from 'dotenv'
+configDotenv()
 
-const production = {};
+const production = {}
 
-export default production;
+export default production

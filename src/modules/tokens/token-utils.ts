@@ -11,7 +11,8 @@ export const generateToken = async () => {
 
     return { rawToken, hashedToken }
   } catch (e) {
-    if (e instanceof Error) throw new ApiError(500, `Error generating token: ${e.message}`)
+    if (e instanceof Error)
+      throw new ApiError(500, `Error generating token: ${e.message}`)
 
     throw new ApiError(500, 'Unknown error generating token')
   }
@@ -21,7 +22,8 @@ export const verifyToken = async (token: string, hashedToken: string) => {
   try {
     return await bcrypt.compare(token, hashedToken)
   } catch (e) {
-    if(e instanceof Error) throw new ApiError(500, `Error verifying token: ${e.message}`)
+    if (e instanceof Error)
+      throw new ApiError(500, `Error verifying token: ${e.message}`)
 
     throw new ApiError(500, 'Unknown error verifying token')
   }

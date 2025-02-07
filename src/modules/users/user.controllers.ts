@@ -73,7 +73,7 @@ export class UserController {
   ) => {
     const { username, bio, role } = req.body
     const profileImageUrl = req.file ? req.file.path : undefined
-    const { id } = req.params
+    const { id } = req.user!
 
     try {
       const updatedUser = await UserService.updateProfile({

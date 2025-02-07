@@ -10,7 +10,7 @@ export class FreelancerController {
   ) => {
     try {
       const { hourlyRate, skills, portfolio } = req.body
-      const { id } = req.params
+      const { id } = req.user!
 
       const freelancer = await FreelancerService.createFreelancerProfile({
         userId: Number(id),
@@ -37,7 +37,7 @@ export class FreelancerController {
   ) => {
     const { username, bio, role, hourlyRate, skills, portfolio } = req.body
     const profileImageUrl = req.file ? req.file.path : undefined
-    const { id } = req.params
+    const { id } = req.user!
 
     try {
       const updatedFreelancer = await FreelancerService.updateFreelancerProfile(
