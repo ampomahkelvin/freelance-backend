@@ -54,7 +54,8 @@ class EmailService {
 
       if (Status !== 'success') throw new ApiError(500, 'Failed to send email')
     } catch (e) {
-      if(e instanceof Error) throw new ApiError(500, `Failed to send email: ${e.message}`)
+      if (e instanceof Error)
+        throw new ApiError(500, `Failed to send email: ${e.message}`)
 
       throw new ApiError(500, 'Unknown error sending email')
     }

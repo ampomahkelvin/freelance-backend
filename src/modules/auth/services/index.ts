@@ -40,7 +40,6 @@ export class AuthService {
     bio,
     role,
   }: CreateUserSchema) => {
-
     const existingUser = await AuthRepository.getUserByEmail(email)
     if (existingUser) throw new ApiError(400, 'User already exists')
 

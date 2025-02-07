@@ -1,6 +1,6 @@
-import { configDotenv } from 'dotenv';
-configDotenv();
+import { configDotenv } from 'dotenv'
+configDotenv()
 
-const development = {};
+const development = {}
 
-export default development;
+export default development

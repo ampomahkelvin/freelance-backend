@@ -9,7 +9,8 @@ export class TokenService {
 
       return token
     } catch (e) {
-      if (e instanceof Error) throw new ApiError(500, `Error getting token: ${e.message}`)
+      if (e instanceof Error)
+        throw new ApiError(500, `Error getting token: ${e.message}`)
 
       throw new ApiError(500, 'Unknown error getting token')
     }
@@ -22,7 +23,8 @@ export class TokenService {
 
       return TokenRepository.setTokenUsed(userId)
     } catch (e) {
-      if (e instanceof Error) throw new ApiError(500, `Error setting token as used: ${e.message}`)
+      if (e instanceof Error)
+        throw new ApiError(500, `Error setting token as used: ${e.message}`)
 
       throw new ApiError(500, 'Unknown error setting token as used')
     }
@@ -35,7 +37,8 @@ export class TokenService {
 
       return token
     } catch (e) {
-      if (e instanceof Error) throw new ApiError(500, `Error storing token: ${e.message}`)
+      if (e instanceof Error)
+        throw new ApiError(500, `Error storing token: ${e.message}`)
 
       throw new ApiError(500, 'Error storing token')
     }

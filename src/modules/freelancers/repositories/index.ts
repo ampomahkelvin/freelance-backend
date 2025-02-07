@@ -73,9 +73,10 @@ export class FreelancerRepository {
 
   static getFreelancerBySkill = async (skill: string) => {
     try {
-      return await sqlQuest.manyOrNone(freelancerQueries.getFreelancersBySkill, [
-        `%${skill}%`,
-      ])
+      return await sqlQuest.manyOrNone(
+        freelancerQueries.getFreelancersBySkill,
+        [`%${skill}%`],
+      )
     } catch (e) {
       throw e
     }

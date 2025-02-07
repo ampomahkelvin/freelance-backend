@@ -5,6 +5,7 @@ import {
   sendErrorResponse,
   sendSuccessResponse,
 } from '../../shared/utils/response-utils'
+// import upload from '../../shared/middleware/upload.middleware'
 
 export class AuthController {
   static registerUser = async (
@@ -27,10 +28,12 @@ export class AuthController {
 
       if (!user) return sendErrorResponse(res, 400, 'User registration failed')
 
-      sendSuccessResponse(res, 201, 'User created successfully', {
-        token,
-        user: sanitizeUser(user),
-      })
+      // sendSuccessResponse(res, 201, 'User created successfully', {
+      //   token,
+      //   user: sanitizeUser(user),
+      // })
+
+      next()
     } catch (e) {
       next(e)
     }

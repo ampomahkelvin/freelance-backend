@@ -30,12 +30,14 @@ export class UserRepository {
   static updateProfile = async ({
     username,
     bio,
+    profileImage,
     role,
     userId,
   }: UpdateProfileSchema & { userId: number }) => {
     try {
-      return await sqlQuest.none(userQueries.updateProfile, [
+      return await sqlQuest.oneOrNone(userQueries.updateProfile, [
         username,
+        profileImage,
         bio,
         role,
         userId,

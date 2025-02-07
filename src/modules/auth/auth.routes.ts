@@ -13,7 +13,7 @@ const router = express.Router()
 
 router.post(
   '/register',
-  upload.single('profile image'),
+  upload('profile picture', 'profile pictures', ['image/jpeg', 'image/png', 'image/jpg']),
   ValidationMiddleware.validateRequest(createUserSchema),
   AuthController.registerUser,
 )
